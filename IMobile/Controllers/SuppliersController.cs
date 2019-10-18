@@ -33,7 +33,7 @@ namespace IMobile.Controllers
             }
 
 
-            var supplier = await _context.Supplier
+            var supplier = await _context.Supplier.Include(s=>s.AccList)
                 .Include(s => s.DeviceList)
                      .AsNoTracking()
                     .FirstOrDefaultAsync(m => m.SupplierID == id);

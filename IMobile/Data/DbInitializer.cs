@@ -17,9 +17,24 @@ namespace IMobile.Data
              {
                  return;   // DB has been seeded
              }
-             
-            
 
+            var acc = new Accessorie[]
+           {
+           new Accessorie{Manufacture="Apple", Name="Charger", Price=90,SupplierID=2},
+           new Accessorie{Manufacture="Samsung", Name="Charger", Price=70,SupplierID=4},
+           new Accessorie{Manufacture="Xiaomi", Name="Charger", Price=40,SupplierID=1},
+
+
+           };
+            foreach (Accessorie s in acc)
+            {
+                context.Accessorie.Add(s);
+            }
+            context.SaveChanges();
+
+
+
+            
            var suppliers = new Supplier[]
            {
            new Supplier{ Name= "Nir"},
