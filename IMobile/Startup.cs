@@ -41,6 +41,18 @@ namespace IMobile
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+
+            services.AddAuthentication()
+         .AddGoogle(options =>
+         {
+             IConfigurationSection googleAuthNSection =
+                 Configuration.GetSection("Authentication:Google");
+
+             options.ClientId = googleAuthNSection["461606527302-7kll6itr148gsvmcugcg19hn9ivmtpka.apps.googleusercontent.com"];
+             options.ClientSecret = googleAuthNSection["lynJReUtJmtNIzR1g66UovyF"];
+         });
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<IMobileContext>(options =>

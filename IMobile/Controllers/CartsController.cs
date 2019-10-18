@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IMobile.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IMobile.Controllers
 {
+    [Authorize]
     public class CartsController : Controller
     {
         private readonly IMobileContext _context;
