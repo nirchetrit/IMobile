@@ -16,7 +16,8 @@ namespace IMobile.Models
 
         public string Manufacture { get; set; }
 
-        public int Price { get; set; }
+        [DataType(DataType.Currency)]
+        public double Price { get; set; }
 
 
         public string Description { get; set; }

@@ -9,14 +9,24 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
+
             <th>
                 @Html.DisplayNameFor(model => model.Manufacture)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Name)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ImageUrl)
@@ -25,13 +35,13 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ScreenSize)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Memory)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["MemorySortParm"]">@Html.DisplayNameFor(model => model.Memory)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.RamMemory)
@@ -43,41 +53,42 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Manufacture)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ScreenSize)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Memory)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RamMemory)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Supplier.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.DeviceID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DeviceID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DeviceID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manufacture)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScreenSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Memory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RamMemory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DeviceID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.DeviceID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DeviceID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

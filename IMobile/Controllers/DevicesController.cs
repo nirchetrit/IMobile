@@ -19,10 +19,44 @@ namespace IMobile.Controllers
         }
 
         // GET: Devices
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            var iMobileContext = _context.Device.Include(d => d.Supplier);
-            return View(await iMobileContext.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Price" ? "price_desc" : "Price";
+            ViewData["MemorySortParm"] = sortOrder == "Memory" ? "memory_desc" : "Memory";
+            ViewData["CurrentFilter"] = searchString;
+
+
+            var devices = from s in _context.Device
+                          select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                devices = devices.Where(s => s.Manufacture.Contains(searchString)
+                                       || s.Name.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    devices = devices.OrderByDescending(s => s.Name);
+                    break;
+                case "Price":
+                    devices = devices.OrderBy(s => s.Price);
+                    break;
+                case "price_desc":
+                    devices = devices.OrderByDescending(s => s.Price);
+                    break;
+                case "Memory":
+                    devices = devices.OrderBy(s => s.Memory);
+                    break;
+                case "memory_desc":
+                    devices = devices.OrderByDescending(s => s.Memory);
+                    break;
+                default:
+                    devices = devices.OrderBy(s => s.Name);
+                    break;
+            }
+            return View(await devices.AsNoTracking().ToListAsync());
         }
 
         // GET: Devices/Details/5
@@ -47,7 +81,7 @@ namespace IMobile.Controllers
         // GET: Devices/Create
         public IActionResult Create()
         {
-            ViewData["SupplierID"] = new SelectList(_context.Set<Supplier>(), "SupplierID", "Name");
+            ViewData["SupplierID"] = new SelectList(_context.Supplier, "SupplierID", "Name");
             return View();
         }
 
@@ -64,7 +98,7 @@ namespace IMobile.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SupplierID"] = new SelectList(_context.Set<Supplier>(), "SupplierID", "Name", device.SupplierID);
+            ViewData["SupplierID"] = new SelectList(_context.Supplier, "SupplierID", "Name", device.SupplierID);
             return View(device);
         }
 
@@ -81,7 +115,7 @@ namespace IMobile.Controllers
             {
                 return NotFound();
             }
-            ViewData["SupplierID"] = new SelectList(_context.Set<Supplier>(), "SupplierID", "Name", device.SupplierID);
+            ViewData["SupplierID"] = new SelectList(_context.Supplier, "SupplierID", "Name", device.SupplierID);
             return View(device);
         }
 
@@ -117,7 +151,7 @@ namespace IMobile.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SupplierID"] = new SelectList(_context.Set<Supplier>(), "SupplierID", "Name", device.SupplierID);
+            ViewData["SupplierID"] = new SelectList(_context.Supplier, "SupplierID", "Name", device.SupplierID);
             return View(device);
         }
 
