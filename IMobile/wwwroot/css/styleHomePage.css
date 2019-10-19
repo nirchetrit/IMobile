@@ -1,0 +1,22 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    
+ 
+}
+
+.welcome-text {
+    position:center;
+    width: 600px;
+    height: 300px;
+    margin: 20% 30%;
+    text-align: center;
+}
+
+    .welcome-text h1 {
+        text-align: center;
+        color: #000;
+        text-transform: uppercase;
+        font-size: 40px;
+        text-align: center;
+    }
