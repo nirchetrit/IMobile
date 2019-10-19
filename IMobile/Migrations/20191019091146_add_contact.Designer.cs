@@ -3,14 +3,16 @@ using IMobile.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IMobile.Migrations
 {
     [DbContext(typeof(IMobileContext))]
-    partial class IMobileContextModelSnapshot : ModelSnapshot
+    [Migration("20191019091146_add_contact")]
+    partial class add_contact
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -95,33 +97,6 @@ namespace IMobile.Migrations
                     b.HasIndex("DeviceID");
 
                     b.ToTable("CartItemDevice");
-                });
-
-            modelBuilder.Entity("IMobile.Models.Contact", b =>
-                {
-                    b.Property<int>("ContactId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Address");
-
-                    b.Property<string>("City");
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("OwnerID");
-
-                    b.Property<string>("State");
-
-                    b.Property<int>("Status");
-
-                    b.Property<string>("Zip");
-
-                    b.HasKey("ContactId");
-
-                    b.ToTable("Contact");
                 });
 
             modelBuilder.Entity("IMobile.Models.Device", b =>

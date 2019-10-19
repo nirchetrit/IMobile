@@ -6,75 +6,65 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IMobile.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace IMobile.Controllers
 {
-    [Authorize]
-    public class CartsController : Controller
+    public class ContactsController : Controller
     {
         private readonly IMobileContext _context;
 
-        public CartsController(IMobileContext context)
+        public ContactsController(IMobileContext context)
         {
             _context = context;
         }
 
-        // GET: Carts
+        // GET: Contacts
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Cart.ToListAsync());
+            return View(await _context.Contact.ToListAsync());
         }
 
-        // GET: Carts/Details/5
+        // GET: Contacts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            var userid = User.Identity.Name;
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-              if (id == null)
-              {
-                  return NotFound();
-              }
-            
-              var cart = await _context.Cart
-                  .Include(s => s.DeviceList)
-                      .ThenInclude(e => e.Device)
-                  .AsNoTracking()
-                  .FirstOrDefaultAsync(m => m.UserID == id);
-            
-              if (cart == null)
-              {
-                  return NotFound();
-              }
-            
-              return View(cart);
+            var contact = await _context.Contact
+                .FirstOrDefaultAsync(m => m.ContactId == id);
+            if (contact == null)
+            {
+                return NotFound();
+            }
 
-
+            return View(contact);
         }
 
-        // GET: Carts/Create
+        // GET: Contacts/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Carts/Create
+        // POST: Contacts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CartID,UserID")] Cart cart)
+        public async Task<IActionResult> Create([Bind("ContactId,OwnerID,Name,Address,City,State,Zip,Email,Status")] Contact contact)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(cart);
+                _context.Add(contact);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(cart);
+            return View(contact);
         }
 
-        // GET: Carts/Edit/5
+        // GET: Contacts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,22 +72,22 @@ namespace IMobile.Controllers
                 return NotFound();
             }
 
-            var cart = await _context.Cart.FindAsync(id);
-            if (cart == null)
+            var contact = await _context.Contact.FindAsync(id);
+            if (contact == null)
             {
                 return NotFound();
             }
-            return View(cart);
+            return View(contact);
         }
 
-        // POST: Carts/Edit/5
+        // POST: Contacts/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CartID,UserID")] Cart cart)
+        public async Task<IActionResult> Edit(int id, [Bind("ContactId,OwnerID,Name,Address,City,State,Zip,Email,Status")] Contact contact)
         {
-            if (id != cart.CartID)
+            if (id != contact.ContactId)
             {
                 return NotFound();
             }
@@ -106,12 +96,12 @@ namespace IMobile.Controllers
             {
                 try
                 {
-                    _context.Update(cart);
+                    _context.Update(contact);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CartExists(cart.CartID))
+                    if (!ContactExists(contact.ContactId))
                     {
                         return NotFound();
                     }
@@ -122,10 +112,10 @@ namespace IMobile.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(cart);
+            return View(contact);
         }
 
-        // GET: Carts/Delete/5
+        // GET: Contacts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -133,30 +123,30 @@ namespace IMobile.Controllers
                 return NotFound();
             }
 
-            var cart = await _context.Cart
-                .FirstOrDefaultAsync(m => m.CartID == id);
-            if (cart == null)
+            var contact = await _context.Contact
+                .FirstOrDefaultAsync(m => m.ContactId == id);
+            if (contact == null)
             {
                 return NotFound();
             }
 
-            return View(cart);
+            return View(contact);
         }
 
-        // POST: Carts/Delete/5
+        // POST: Contacts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cart = await _context.Cart.FindAsync(id);
-            _context.Cart.Remove(cart);
+            var contact = await _context.Contact.FindAsync(id);
+            _context.Contact.Remove(contact);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CartExists(int id)
+        private bool ContactExists(int id)
         {
-            return _context.Cart.Any(e => e.CartID == id);
+            return _context.Contact.Any(e => e.ContactId == id);
         }
     }
 }
