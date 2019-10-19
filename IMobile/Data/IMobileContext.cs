@@ -26,6 +26,5 @@ namespace IMobile.Models
 
         public DbSet<IMobile.Models.Supplier> Supplier { get; set; }
 
-        public DbSet<IMobile.Models.Contact> Contact { get; set; }
     }
 }
