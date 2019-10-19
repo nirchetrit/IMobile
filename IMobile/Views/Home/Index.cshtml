@@ -66,11 +66,39 @@
         <div class="welcome-text">
             <h1> Welcome to IMobile Store</h1>
 
-            @Html.ActionLink("Devices", "Index", "Devices") 
+            @Html.ActionLink("Devices", "Index", "Devices")
             @Html.ActionLink("Accessories", "Index", "Accessories")
+
+
+            <script type="text/javascript">
+                var d = new Date();
+                var time = d.getHours();
+
+                if (time < 10) {
+                    document.write("<b>Good morning</b>");
+                }
+                else {
+                    document.write("<b>Good day</b>");
+                }
+            </script>
+            <script type="text/javascript">
+                var r = Math.random();
+                if (r > 0.5) {
+                    document.write("<a href='http://www.ynet.co.il'>Ynet News!</a>");
+                }
+                else {
+                    document.write("<a href='http://www.walla.co.il'>Visit Walla!</a>");
+                }
+            </script>
 
 
         </div>
     </header>
 </body>
 </html>
+<br />
+<br />
+
+<div class="parent">
+    <div class="box">קוד קופון:JFJ34</div>
+</div>
