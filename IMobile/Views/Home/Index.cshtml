@@ -54,159 +54,183 @@
     </a>
 </div>
 
-<div class="textonbox">
-    Click here to get Cupon Code <br />
-    For use in stores
-</div>
-
-<div class="parent">
-    <div class="box">qu3j54i</div>
-</div>
-
-<!-- weather widget start -->
-<div class="wather" id="m-booked-bl-simple-week-vertical-15441">
-    <div class="booked-wzs-160-275 weather-customize" style="background-color:#117aeb; width:160px;" id="width1 ">
-        <a target="_blank" class="booked-wzs-top-160-275" href="https://www.booked.net/">
-            <img src="//s.bookcdn.com/images/letter/s5.gif" alt="booked.net" />
-        </a>
-        <div class="booked-wzs-160-275_in">
-            <div class="booked-wzs-160-275-data">
-                <div class="booked-wzs-160-275-left-img wrz-03"></div>
-                <div class="booked-wzs-160-275-right">
-                    <div class="booked-wzs-day-deck">
-                        <div class="booked-wzs-day-val">
-                            <div class="booked-wzs-day-number"><span class="plus">+</span>28</div>
-                            <div class="booked-wzs-day-dergee">
-                                <div class="booked-wzs-day-dergee-val">&deg;</div>
-                                <div class="booked-wzs-day-dergee-name">C</div>
-                            </div>
-                        </div>
-                        <div class="booked-wzs-day">
-                            <div class="booked-wzs-day-d"><span class="plus">+</span>28&deg;</div>
-                            <div class="booked-wzs-day-n"><span class="plus">+</span>26&deg;</div>
-                        </div>
-                    </div>
-                    <div class="booked-wzs-160-275-info">
-                        <div class="booked-wzs-160-275-city">Tel Aviv</div>
-                        <div class="booked-wzs-160-275-date">Sunday, 20</div>
-                    </div>
-                </div>
-            </div> <a target="_blank" href="https://www.booked.net/weather/tel-aviv-18414" class="booked-wzs-bottom-160-275">
-                <table cellpadding="0" cellspacing="0" class="booked-wzs-table-160">
-                    <tr>
-                        <td class="week-day">
-                            <span class="week-day-txt">Monday</span>
-                        </td>
-                        <td class="week-day-ico">
-                            <div class="wrz-sml wrzs-01"></div>
-                        </td>
-                        <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
-                        <td class="week-day-val"><span class="plus">+</span>24&deg;</td>
-                    </tr>
-                    <tr>
-                        <td class="week-day"> <span class="week-day-txt">Tuesday</span></td>
-                        <td class="week-day-ico"><div class="wrz-sml wrzs-03"></div></td>
-                        <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
-                        <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
-                    </tr>
-                    <tr>
-                        <td class="week-day"> <span class="week-day-txt">Wednesday</span></td>
-                        <td class="week-day-ico"><div class="wrz-sml wrzs-06"></div></td>
-                        <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
-                        <td class="week-day-val"><span class="plus">+</span>24&deg;</td>
-                    </tr>
-                    <tr>
-                        <td class="week-day"> <span class="week-day-txt">Thursday</span></td>
-                        <td class="week-day-ico"><div class="wrz-sml wrzs-01"></div></td>
-                        <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
-                        <td class="week-day-val"><span class="plus">+</span>24&deg;</td>
-                    </tr>
-                    <tr>
-                        <td class="week-day"> <span class="week-day-txt">Friday</span></td>
-                        <td class="week-day-ico"><div class="wrz-sml wrzs-18"></div></td>
-                        <td class="week-day-val"><span class="plus">+</span>24&deg;</td>
-                        <td class="week-day-val"><span class="plus">+</span>23&deg;</td>
-                    </tr>
-                    <tr>
-                        <td class="week-day"> <span class="week-day-txt">Saturday</span></td>
-                        <td class="week-day-ico"><div class="wrz-sml wrzs-18"></div></td>
-                        <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
-                        <td class="week-day-val"><span class="plus">+</span>23&deg;</td>
-                    </tr>
-                </table>
-                <div class="booked-wzs-center"> <span class="booked-wzs-bottom-l">See 7-Day Forecast</span> </div>
-            </a>
-        </div>
-    </div>
-    <script type="text/javascript">
-        var css_file = document.createElement("link");
-        css_file.setAttribute("rel", "stylesheet");
-        css_file.setAttribute("type", "text/css");
-        css_file.setAttribute("href", 'https://s.bookcdn.com/css/w/booked-wzs-widget-160x275.css?v=0.0.1');
-        document.getElementsByTagName("head")[0].appendChild(css_file);
-        function setWidgetData(data) {
-            if (typeof (data) != 'undefined' && data.results.length > 0) {
-                for (var i = 0; i < data.results.length; ++i) {
-                    var objMainBlock = document.getElementById('m-booked-bl-simple-week-vertical-15441');
-                    if (objMainBlock !== null) {
-                        var copyBlock = document.getElementById('m-bookew-weather-copy-' + data.results[i].widget_type);
-                        objMainBlock.innerHTML = data.results[i].html_code;
-                        if (copyBlock !== null) objMainBlock.appendChild(copyBlock);
-                    }
-                }
-            }
-            else { alert('data=undefined||data.results is empty'); }
-        }
-    </script>
-    <script type="text/javascript" charset="UTF-8" src="https://widgets.booked.net/weather/info?action=get_weather_info&ver=6&cityID=18414&type=4&scode=124&ltid=3458&domid=w209&anc_id=15325&cmetric=1&wlangID=1&color=117aeb&wwidth=160&header_color=ffffff&text_color=333333&link_color=08488D&border_form=1&footer_color=ffffff&footer_text_color=333333&transparent=0"></script><!-- weather widget end -->
-
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>IMobile Store HomePage</title>
-        <link rel="stylesheet" href="~/css/styleHomePage.css" />
-
-    </head>
-
-    <body>
-        <header>
-
-            <div class="welcome-text">
-                <h1> Welcome to IMobile Store</h1>
-
-                @Html.ActionLink("Devices", "Index", "Devices")
-                @Html.ActionLink("Accessories", "Index", "Accessories")
-
-                <p>Hover over the div element below, to see the transition effect:</p>
-                <div></div>
-                <script type="text/javascript">
-                    var d = new Date();
-                    var time = d.getHours();
-
-                    if (time < 10) {
-                        document.write("<b>Good morning</b>");
-                    }
-                    else {
-                        document.write("<b>Good day</b>");
-                    }
-                </script>
-                <script type="text/javascript">
-                    var r = Math.random();
-                    if (r > 0.5) {
-                        document.write("<a href='http://www.ynet.co.il'>Ynet News!</a>");
-                    }
-                    else {
-                        document.write("<a href='http://www.walla.co.il'>Visit Walla!</a>");
-                    }
-                </script>
 
 
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>IMobile Store HomePage</title>
+    <link rel="stylesheet" href="~/css/styleHomePage.css" />
+
+</head>
+
+<body>
+    <header>
+        <div class="aside">
+            <div class="textonbox">
+                Click here to get Cupon Code <br />
+                For use in stores
             </div>
 
+            <div class="parent">
+                <div class="box">qu3j54i</div>
+            </div>
 
-        </header>
-    </body>
+            <!-- weather widget start -->
+            <div class="wather" id="m-booked-bl-simple-week-vertical-15441">
+                <div class="booked-wzs-160-275 weather-customize" style="background-color:#2163fe; width:160px;" id="width1 ">
+                    <a target="_blank" class="booked-wzs-top-160-275" href="https://www.booked.net/">
+                        <img src="//s.bookcdn.com/images/letter/s5.gif" alt="booked.net" />
+                    </a>
+                    <div class="booked-wzs-160-275_in">
+                        <div class="booked-wzs-160-275-data">
+                            <div class="booked-wzs-160-275-left-img wrz-03"></div>
+                            <div class="booked-wzs-160-275-right">
+                                <div class="booked-wzs-day-deck">
+                                    <div class="booked-wzs-day-val">
+                                        <div class="booked-wzs-day-number"><span class="plus">+</span>28</div>
+                                        <div class="booked-wzs-day-dergee">
+                                            <div class="booked-wzs-day-dergee-val">&deg;</div>
+                                            <div class="booked-wzs-day-dergee-name">C</div>
+                                        </div>
+                                    </div>
+                                    <div class="booked-wzs-day">
+                                        <div class="booked-wzs-day-d"><span class="plus">+</span>28&deg;</div>
+                                        <div class="booked-wzs-day-n"><span class="plus">+</span>26&deg;</div>
+                                    </div>
+                                </div>
+                                <div class="booked-wzs-160-275-info">
+                                    <div class="booked-wzs-160-275-city">Tel Aviv</div>
+                                    <div class="booked-wzs-160-275-date">Sunday, 20</div>
+                                </div>
+                            </div>
+                        </div> <a target="_blank" href="https://www.booked.net/weather/tel-aviv-18414" class="booked-wzs-bottom-160-275">
+                            <table cellpadding="0" cellspacing="0" class="booked-wzs-table-160">
+                                <tr>
+                                    <td class="week-day">
+                                        <span class="week-day-txt">Monday</span>
+                                    </td>
+                                    <td class="week-day-ico">
+                                        <div class="wrz-sml wrzs-01"></div>
+                                    </td>
+                                    <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
+                                    <td class="week-day-val"><span class="plus">+</span>24&deg;</td>
+                                </tr>
+                                <tr>
+                                    <td class="week-day"> <span class="week-day-txt">Tuesday</span></td>
+                                    <td class="week-day-ico"><div class="wrz-sml wrzs-03"></div></td>
+                                    <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
+                                    <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
+                                </tr>
+                                <tr>
+                                    <td class="week-day"> <span class="week-day-txt">Wednesday</span></td>
+                                    <td class="week-day-ico"><div class="wrz-sml wrzs-06"></div></td>
+                                    <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
+                                    <td class="week-day-val"><span class="plus">+</span>24&deg;</td>
+                                </tr>
+                                <tr>
+                                    <td class="week-day"> <span class="week-day-txt">Thursday</span></td>
+                                    <td class="week-day-ico"><div class="wrz-sml wrzs-01"></div></td>
+                                    <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
+                                    <td class="week-day-val"><span class="plus">+</span>24&deg;</td>
+                                </tr>
+                                <tr>
+                                    <td class="week-day"> <span class="week-day-txt">Friday</span></td>
+                                    <td class="week-day-ico"><div class="wrz-sml wrzs-18"></div></td>
+                                    <td class="week-day-val"><span class="plus">+</span>24&deg;</td>
+                                    <td class="week-day-val"><span class="plus">+</span>23&deg;</td>
+                                </tr>
+                                <tr>
+                                    <td class="week-day"> <span class="week-day-txt">Saturday</span></td>
+                                    <td class="week-day-ico"><div class="wrz-sml wrzs-18"></div></td>
+                                    <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
+                                    <td class="week-day-val"><span class="plus">+</span>23&deg;</td>
+                                </tr>
+                            </table>
+                            <div class="booked-wzs-center"> <span class="booked-wzs-bottom-l">See 7-Day Forecast</span> </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                var css_file = document.createElement("link");
+                css_file.setAttribute("rel", "stylesheet");
+                css_file.setAttribute("type", "text/css");
+                css_file.setAttribute("href", 'https://s.bookcdn.com/css/w/booked-wzs-widget-160x275.css?v=0.0.1');
+                document.getElementsByTagName("head")[0].appendChild(css_file);
+                function setWidgetData(data) {
+                    if (typeof (data) != 'undefined' && data.results.length > 0) {
+                        for (var i = 0; i < data.results.length; ++i) {
+                            var objMainBlock = document.getElementById('m-booked-bl-simple-week-vertical-15441');
+                            if (objMainBlock !== null) {
+                                var copyBlock = document.getElementById('m-bookew-weather-copy-' + data.results[i].widget_type);
+                                objMainBlock.innerHTML = data.results[i].html_code;
+                                if (copyBlock !== null) objMainBlock.appendChild(copyBlock);
+                            }
+                        }
+                    }
+                    else { alert('data=undefined||data.results is empty'); }
+                }
+            </script>
+            <script type="text/javascript" charset="UTF-8" src="https://widgets.booked.net/weather/info?action=get_weather_info&ver=6&cityID=18414&type=4&scode=124&ltid=3458&domid=w209&anc_id=15325&cmetric=1&wlangID=1&color=117aeb&wwidth=160&header_color=ffffff&text_color=333333&link_color=08488D&border_form=1&footer_color=ffffff&footer_text_color=333333&transparent=0"></script><!-- weather widget end -->
+
+
+
+        </div>
+        <div class="welcome-text">
+            <h1> Welcome to IMobile Store</h1>
+
+            @Html.ActionLink("Devices", "Index", "Devices")
+            @Html.ActionLink("Accessories", "Index", "Accessories")
+
+            <p>Hover over the div element below, to see the transition effect:</p>
+            <div></div>
+            <script type="text/javascript">
+                var d = new Date();
+                var time = d.getHours();
+
+                if (time < 10) {
+                    document.write("<b>Good morning</b>");
+                }
+                else {
+                    document.write("<b>Good day</b>");
+                }
+            </script>
+
+        </div>
+
+       
+        
+           
+            <div class="block1">
+                <div class='theImage'>
+                    <img src='~/images/Galaxy s10.jpeg' alt='galaxy10' title='galaxy10' />
+                </div>
+
+                <div class="theText">
+                    <div class='BIGtitle' href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
+                        BUY & GET
+                    </div>
+                    <div class="SMALLtitle" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
+                        Learn More
+                    </div>
+                    <div class="forInfo">
+                        <a class="text-center" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+                           
+                 
+
+     
+
+    </header>
+</body>
 </html>
 <br />
 <br />
