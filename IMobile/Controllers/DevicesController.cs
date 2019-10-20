@@ -19,7 +19,7 @@ namespace IMobile.Controllers
         }
 
         // GET: Devices
-        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        public async Task<IActionResult> Index(string sortOrder, string searchString, String Manufacture, int minprice, int maxprice, int minram, int maxram)
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["PriceSortParm"] = sortOrder == "Price" ? "price_desc" : "Price";
@@ -36,6 +36,35 @@ namespace IMobile.Controllers
                 devices = devices.Where(s => s.Manufacture.Contains(searchString)
                                        || s.Name.Contains(searchString));
             }
+
+
+            if (Manufacture != null)
+            {
+                devices = devices.Where(s => s.Manufacture.Contains(Manufacture));
+            }
+            if (minprice != 0)
+            {
+                devices = devices.Where(s => s.Price > minprice);
+            }
+            if (maxprice != 0)
+            {
+                devices = devices.Where(s => s.Price < maxprice);
+            }
+            if (minram != 0)
+            {
+                devices = devices.Where(s => s.Price > minram);
+            }
+            if (maxram != 0)
+            {
+                devices = devices.Where(s => s.Price < maxram);
+            }
+
+
+
+
+
+
+
             switch (sortOrder)
             {
                 case "name_desc":

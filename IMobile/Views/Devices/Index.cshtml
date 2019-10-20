@@ -9,12 +9,41 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+@using (Html.BeginForm())
+{
+    
+}
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
         <p>
             Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
             <input type="submit" value="Search" class="btn btn-default" /> |
             <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Manufacture: <input type="text" name="Manufacture" value="@ViewData["Manufacture"]" />
+            <input type="submit" value="Apply" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+        <p>
+            Find by minprice: <input type="text" name="minprice" value="@ViewData["minprice"]" />
+            <input type="submit" value="Apply" class="btn btn-default" /> |
+        </p>
+        <p>
+            Find by maxprice: <input type="text" name="maxprice" value="@ViewData["maxprice"]" />
+            <input type="submit" value="Apply" class="btn btn-default" /> |
+        </p>
+        <p>
+            Find by maxram: <input type="text" name="maxram" value="@ViewData["maxram"]" />
+            <input type="submit" value="Apply" class="btn btn-default" /> |
+        </p>
+        <p>
+            Find by minram: <input type="text" name="minram" value="@ViewData["minram"]" />
+            <input type="submit" value="Apply" class="btn btn-default" /> |
         </p>
     </div>
 </form>
