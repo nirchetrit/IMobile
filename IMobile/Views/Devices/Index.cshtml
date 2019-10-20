@@ -23,7 +23,7 @@
         <tr>
 
             <th>
-                @Html.DisplayNameFor(model => model.Manufacture)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Manufacture)</a>
             </th>
             <th>
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Name)</a>
@@ -35,7 +35,7 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["PriceSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ScreenSize)

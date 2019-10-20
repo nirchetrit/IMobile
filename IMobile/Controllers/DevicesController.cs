@@ -22,7 +22,8 @@ namespace IMobile.Controllers
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewData["DateSortParm"] = sortOrder == "Price" ? "price_desc" : "Price";
+            ViewData["PriceSortParm"] = sortOrder == "Price" ? "price_desc" : "Price";
+            ViewData["ManufactureSortParm"] = sortOrder == "Manufacture" ? "manufacture_desc" : "Manufacture";
             ViewData["MemorySortParm"] = sortOrder == "Memory" ? "memory_desc" : "Memory";
             ViewData["CurrentFilter"] = searchString;
 
