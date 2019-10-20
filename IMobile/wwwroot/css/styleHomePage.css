@@ -1,14 +1,14 @@
-﻿* {
-    margin:auto;
-    padding:initial;
-}
+﻿
 
 .welcome-text {
-    position:center;
+    position: center;
     width: 600px;
     height: 300px;
     margin: 20% 30%;
     text-align: center;
+    margin-top: 0px;
+    margin-left: 200px;
+    margin-right: 100px;
 }
 
     .welcome-text h1 {
@@ -17,44 +17,51 @@
         color: #000;
         text-transform: uppercase;
         font-size: 40px;
-        text-align: center;
+        margin-left: 50px;
     }
 
+.textonbox {
+    color: black;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 50px;
+}
+
 .parent {
-    width: 250px;
-    height: 125px;
+    width: 0px;
+    height: 0px;
+    color: aliceblue;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 50px;
+    text-align: center;
 }
 
 .box {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    font-size: 20px;
-    left: 0px;
-    top: 0px;
-    position: absolute;
-    -webkit-transition-property: width height background-color font-size left top color;
-    -webkit-transition-duration: 2s;
-    -webkit-transition-timing-function: linear;
-    transition-property: width height background-color font-size left top color;
-    transition-duration: 2s;
-    transition-timing-function: linear;
-}
-
-.box1 {
-    width: 50px;
+    width: 200px;
     height: 50px;
-    background-color:cornflowerblue;
-    color: yellow;
-    font-size: 18px;
-    left: 150px;
-    top: 60px;
-    position: absolute;
-    -webkit-transition-property: width height background-color font-size left top color;
-    -webkit-transition-duration: 1s;
-    -webkit-transition-timing-function: linear;
-    transition-property: width height background-color font-size left top color;
-    transition-duration: 2s;
-    transition-timing-function: linear;
+    background: black;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 50px;
+    font-size: 20px;
+    color: black;
 }
 
+    .box:hover {
+        background-color: deepskyblue;
+        cursor: pointer;
+        color: black;
+        -webkit-transition: background-color 2s ease-out;
+        -moz-transition: background-color 2s ease-out;
+        -o-transition: background-color 2s ease-out;
+        transition: background-color 2s ease-out;
+    }
+
+.wather {
+    width: 200px;
+    height: 50px;
+    margin-top: 70px;
+    margin-left: 0px;
+    margin-right: 50px;
+}
