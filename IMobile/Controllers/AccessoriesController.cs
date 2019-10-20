@@ -19,10 +19,42 @@ namespace IMobile.Controllers
         }
 
         // GET: Accessories
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            var iMobileContext = _context.Accessorie.Include(a => a.Supplier);
-            return View(await iMobileContext.ToListAsync());
+            //var iMobileContext = _context.Accessorie.Include(a => a.Supplier);
+            //return View(await iMobileContext.ToListAsync());
+
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["PriceSortParm"] = sortOrder == "Price" ? "price_desc" : "Price";
+            ViewData["ManufactureSortParm"] = sortOrder == "Manufacture" ? "manufacture_desc" : "Manufacture";
+            ViewData["CurrentFilter"] = searchString;
+
+
+            var accessorie = from s in _context.Accessorie
+                          select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                accessorie = accessorie.Where(s => s.Manufacture.Contains(searchString)
+                                       || s.Name.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    accessorie = accessorie.OrderByDescending(s => s.Name);
+                    break;
+                case "Price":
+                    accessorie = accessorie.OrderBy(s => s.Price);
+                    break;
+                case "price_desc":
+                    accessorie = accessorie.OrderByDescending(s => s.Price);
+                    break;
+                default:
+                    accessorie = accessorie.OrderBy(s => s.Name);
+                    break;
+            }
+            return View(await accessorie.AsNoTracking().ToListAsync());
+
         }
 
         // GET: Accessories/Details/5

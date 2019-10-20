@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IMobile.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IMobile.Controllers
 {
+    [Authorize]
+
     public class SuppliersController : Controller
     {
         private readonly IMobileContext _context;
@@ -19,9 +22,20 @@ namespace IMobile.Controllers
         }
 
         // GET: Suppliers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Supplier.ToListAsync());
+            ViewData["CurrentFilter"] = searchString;
+
+
+            var supplier = from s in _context.Supplier
+                          select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                supplier = supplier.Where(s => s.Name.Contains(searchString));
+            }
+        
+            return View(await supplier.AsNoTracking().ToListAsync());
         }
 
         // GET: Suppliers/Details/5
