@@ -24,7 +24,7 @@ namespace IMobile.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            //  ViewData["Message"] = "Our contact page.";
 
             return View();
         }
