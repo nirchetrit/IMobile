@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\Class.css" />
     <Content Remove="wwwroot\images\galaxtForBackground.jpg" />
     <Content Remove="wwwroot\images\iphone11.jpg" />
   </ItemGroup>

@@ -66,14 +66,15 @@ body {
 }
 
     .welcome-text h1 {
-        font-size: 28px;
+        font-size: 35px;
         line-height: 100px;
         text-shadow: 2px 2px #0094ff;
         text-align: center;
         color: #000;
         text-transform: uppercase;
+        font-family: "Comic Sans MS", cursive, sans-serif;
     }
-
+   
 .textonbox {
     color: black;
     margin-top: 10px;
@@ -86,24 +87,19 @@ body {
     height: 0px;
     color: #2163fe;
     margin-top: 20px;
-    margin-left: 0px;
-    margin-right: 50px;
     text-align: center;
 }
 
 .box {
     width: 200px;
-    height: 50px;
+    height: 40px;
     background: black;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 50px;
     font-size: 20px;
     color: black;
 }
 
     .box:hover {
-        background-color: deepskyblue;
+        background-color: #137AE9;
         cursor: pointer;
         color: black;
         -webkit-transition: background-color 2s ease-out;
@@ -111,11 +107,16 @@ body {
         -o-transition: background-color 2s ease-out;
         transition: background-color 2s ease-out;
     }
-
+.goodMorning {
+    color: #137AE9;
+    text-align: center;
+    font-family: "Lobster", serif;
+    font-size:30px;
+}
 .weather {
     width: 200px;
     height: 50px;
-    margin-top: 70px;
+    margin-top: 60px;
     margin-left: 0px;
     margin-right: 50px;
 }
@@ -125,8 +126,8 @@ body {
 }
 
 
-.aside {
-    width: 40%;
+.aside1 {
+    width:18%;
     padding-left: .5rem;
     margin-left: .5rem;
     float: right;
@@ -135,10 +136,14 @@ body {
     color: #29627e;
 }
 
-    .aside > p {
+    .aside1 > p {
         margin: .5rem;
     }
 
 p {
     font-family: 'Fira Sans', sans-serif;
+   
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-right: 50px;
 }
