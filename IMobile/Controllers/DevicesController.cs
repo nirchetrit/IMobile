@@ -59,12 +59,6 @@ namespace IMobile.Controllers
                 devices = devices.Where(s => s.Price < maxram);
             }
 
-
-
-
-
-
-
             switch (sortOrder)
             {
                 case "name_desc":
@@ -104,7 +98,23 @@ namespace IMobile.Controllers
             {
                 return NotFound();
             }
-
+            device.ViewCounter++;
+            try
+            {
+                _context.Update(device);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!DeviceExists(device.DeviceID))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
             return View(device);
         }
 
@@ -219,5 +229,13 @@ namespace IMobile.Controllers
         {
             return _context.Device.Any(e => e.DeviceID == id);
         }
+
+
+
+
+       
+
+
+
     }
 }

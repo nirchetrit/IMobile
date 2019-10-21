@@ -33,6 +33,7 @@ namespace IMobile.Models
         public int SupplierID { get; set; }
         public virtual Supplier Supplier { get; set; }
         public ICollection<CartItemDevice> CartItemDevice { get; set; }
+        public int ViewCounter { get; set; } = 0;
 
 
 
