@@ -13,6 +13,7 @@ using IMobile.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using IMobile.Models;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace IMobile
 {
@@ -71,38 +72,79 @@ namespace IMobile
 
 
 
-           // services.AddAuthentication().AddFacebook(facebookOptions =>
-           // {
-           //     facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
-           //     facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-           // }).AddGoogle(options =>
-           // {
-           //     IConfigurationSection googleAuthNSection =
-           //         Configuration.GetSection("Authentication:Google");
-           //
-           //     options.ClientId = googleAuthNSection["ClientId"];
-           //     options.ClientSecret = googleAuthNSection["ClientSecret"];
-           // });
-           //
+            // services.AddAuthentication().AddFacebook(facebookOptions =>
+            // {
+            //     facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+            //     facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            // }).AddGoogle(options =>
+            // {
+            //     IConfigurationSection googleAuthNSection =
+            //         Configuration.GetSection("Authentication:Google");
+            //
+            //     options.ClientId = googleAuthNSection["ClientId"];
+            //     options.ClientSecret = googleAuthNSection["ClientSecret"];
+            // });
+            //
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(
-         options => options.SignIn.RequireConfirmedEmail = false)
-         .AddRoles<IdentityRole>()
-         .AddEntityFrameworkStores<ApplicationDbContext>();
 
-
-
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                        .AddDefaultTokenProviders();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<IMobileContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("IMobileContext")));
 
 
-           
+
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+        .AddRazorPagesOptions(options =>
+        {
+            options.AllowAreas = true;
+            options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
+            options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
+        });
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = $"/Identity/Account/Login";
+                options.LogoutPath = $"/Identity/Account/Logout";
+                options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+            });
+
+
+
+
+
+            // using Microsoft.AspNetCore.Identity.UI.Services;
+            services.AddSingleton<IEmailSender, EmailSender>();
         }
+
+
+              public class EmailSender : IEmailSender
+        {
+            public Task SendEmailAsync(string email, string subject, string message)
+            {
+                return Task.CompletedTask;
+            }
+        } 
+
+
+
+
+
+    
+
+
+
+          
+
+
+    
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
