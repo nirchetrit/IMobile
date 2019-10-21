@@ -34,6 +34,8 @@ namespace IMobile.Models
         public virtual Supplier Supplier { get; set; }
         public ICollection<CartItemDevice> CartItemDevice { get; set; }
         public int ViewCounter { get; set; } = 0;
+        public int AddedToCartCounter { get; set; } = 0;
+
 
 
 

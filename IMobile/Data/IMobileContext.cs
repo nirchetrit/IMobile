@@ -9,6 +9,10 @@ namespace IMobile.Models
 {
     public class IMobileContext : DbContext
     {
+        public IMobileContext()
+        {
+        }
+
         public IMobileContext (DbContextOptions<IMobileContext> options)
             : base(options)
         {

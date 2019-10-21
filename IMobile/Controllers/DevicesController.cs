@@ -230,12 +230,5 @@ namespace IMobile.Controllers
             return _context.Device.Any(e => e.DeviceID == id);
         }
 
-
-
-
-       
-
-
-
     }
 }
