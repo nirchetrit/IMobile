@@ -1,0 +1,97 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    font-family: "Lobster", serif;
+    background-color: #89f;
+    color:#fff;
+    padding: 5px 20px;
+}
+
+.slide-Down-page{
+    position:absolute;
+    width:100%;
+    box-sizing:content-box;
+    background-color:#666;
+    text-align:right;
+
+}
+.content{
+    height:1800px;
+    padding-top: 200px;
+    background-color:#e0e0e0;
+    text-align:center;
+}
+
+.box {
+    display: block;
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+    background: black;
+}
+
+    .box img {
+        width: 200px;
+        float: left;
+    }
+
+    .box:hover img {
+        margin-top: -200px;
+        -webkit-transition: margin 1s;
+        -moz-transition: margin 1s;
+        transition: margin 1s;
+    }
+
+.welcome-text {
+    width: 600px;
+    height: 300px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 200px;
+    margin-right: 100px;
+}
+
+
+    .welcome-text .after-welcome {
+        color: #a3a4a4;
+        font-size: 70px;
+    }
+
+.textonbox {
+    color: black;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 50px;
+}
+
+
+
+
+
+
+
+
+.aside1 {
+    width: 18%;
+    padding-left: .5rem;
+    margin-left: .5rem;
+    float: right;
+    box-shadow: inset 5px 0 5px -5px #29627e;
+    font-style: italic;
+    color: #29627e;
+}
+
+    .aside1 > pAside {
+        margin: .5rem;
+    }
+
+pAside {
+    font-family: 'Fira Sans', sans-serif;
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-right: 50px;
+}
