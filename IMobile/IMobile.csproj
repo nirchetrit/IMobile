@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\css\Class.css" />
+    <Content Remove="wwwroot\images\Facebook_f_logo_%282019%29.JPEG" />
     <Content Remove="wwwroot\images\galaxtForBackground.jpg" />
     <Content Remove="wwwroot\images\iphone11.jpg" />
   </ItemGroup>

@@ -61,60 +61,6 @@ body {
     margin-right: 100px;
 }
 
-.neon {
-    position: relative;
-    overflow: hidden;
-    filter: brightness(100%);
-}
-
-.text {
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    position: relative;
-    user-select: none;
-}
-
-    .text::before {
-        content: attr(data-text);
-        position: absolute;
-        color: white;
-        filter: blur(0.02em);
-        mix-blend-mode: difference;
-    }
-
-.gradient {
-    position: absolute;
-    background: linear-gradient(45deg, #d5dbdd, #9bf2fe, #ccd9db, #f3f0f0, #939fa4);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    mix-blend-mode: multiply;
-}
-
-.spotlight {
-    position: absolute;
-    top: -100%;
-    left: -80%;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient( circle, white, transparent 25% ) center / 25% 25%, radial-gradient( circle, white, black 25% ) center / 12.5% 12.5%;
-    animation: light 5s linear infinite;
-    mix-blend-mode: color-dodge;
-}
-
-@keyframes light {
-    to {
-        transform: translate(50%, 50%);
-    }
-}
-   
-
-
-
 .textonbox {
     color: black;
     margin-top: 10px;
@@ -164,7 +110,14 @@ body {
     margin-right: 50px;
 }
 
-
+.welcome-text {
+    font-family: Big Caslon,Book Antiqua,Palatino Linotype,Georgia,serif;
+    
+}
+    .welcome-text .after-welcome {
+        color: #a3a4a4;
+        font-size: 70px;
+    }
 
 .block1 {
     background: #d5dbdd;
