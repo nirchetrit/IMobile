@@ -1,0 +1,239 @@
+﻿@model IEnumerable<IMobile.Models.Device>
+
+    @{
+    ViewData["Title"] = "Index";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    @using (Html.BeginForm())
+    {
+
+    }
+    <form asp-action="Index" method="get">
+        <div class="form-actions no-color">
+            <p>
+                Find by name: <input type="text" name="SearchString" value="@ViewData[" currentFilter"]" />
+                <input type="submit" value="Search" class="btn btn-default" /> |
+                <a asp-action="Index">Back to Full List</a>
+            </p>
+        </div>
+    </form>
+    <form asp-action="Index" method="get">
+        <div class="form-actions no-color">
+            <p>
+                Find by Manufacture: <input type="text" name="Manufacture" value="@ViewData[" Manufacture"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+                <a asp-action="Index">Back to Full List</a>
+            </p>
+            <p>
+                Find by minprice: <input type="text" name="minprice" value="@ViewData[" minprice"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+            </p>
+            <p>
+                Find by maxprice: <input type="text" name="maxprice" value="@ViewData[" maxprice"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+            </p>
+            <p>
+                Find by maxram: <input type="text" name="maxram" value="@ViewData[" maxram"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+            </p>
+            <p>
+                Find by minram: <input type="text" name="minram" value="@ViewData[" minram"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+            </p>
+        </div>
+    </form>
+    <table class="table device_list">
+        <thead>
+            <tr>
+
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData[" NameSortParm"]">@Html.DisplayNameFor(model => model.Manufacture)</a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData[" NameSortParm"]">@Html.DisplayNameFor(model => model.Name)</a>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImageUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData[" PriceSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ScreenSize)
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData[" MemorySortParm"]">@Html.DisplayNameFor(model => model.Memory)</a>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RamMemory)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Supplier)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manufacture)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <img src="@Url.Content(item.ImageUrl)" style="margin:10px" height="200" width="200" id="imagePreview" />
+                    @*@Html.DisplayFor(modelItem => item.ImageUrl)*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                    <button class='add_cart'>Add To Cart</button>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScreenSize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Memory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RamMemory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Supplier.Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DeviceID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.DeviceID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DeviceID">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="col-xl-3 desktopOnly banner_index hp-top-panels">
+        <div class="row fix_m_leptop">
+
+            <div class="col-xl-12 col-md-6">
+                <a href="https://www.ivory.co.il/catalog.php?id=30963" style="color: black;text-decoration: none;">
+                    <div class="row text-center justify-content-center dadon">
+                        <div class="col-12 text-right font-weight-bold d-xl-grid section_banners_title" style="padding: 9px;font-size: 18px;">
+                            <span> סמארטפון Samsung Galaxy A10s SM-A107F 32GB בצבע שחור - שנה א... </span>
+
+                        </div>
+                        <div class="col-xl-8 col-md-5 col-6 justify-content-center mb-0">
+                            <div class="relative">
+
+                                <img alt="סמארטפון Samsung Galaxy A10s SM-A107F 32GB בצבע שחור - שנה אחריות היבואן הרשמי" title="סמארטפון Samsung Galaxy A10s SM-A107F 32GB בצבע שחור - שנה אחריות היבואן הרשמי" src="files/catalog/reg/1568813971s71Fk.jpg" style="" class="img-fluid"><div style="display:none;"></div>
+                            </div>
+                            <img src="files/content/1551018303b03Xy.jpg" style="width:100%;">
+                        </div>
+                        <div class="col-xl-12 col-6 responsive_pricediv mt-0">
+                            <div class="row">
+                                <span class="sr-only"></span>
+
+                                <div class="col-xl-12 col-lg-12 justify-content-right">
+
+                                    <div class="pt-3">
+
+                                        <div class="pricing-details no-left no-eilat no-sale">
+                                            <div class="row pricing-row ">
+                                                <div class="text-center right-position pricing-col col-12 col-md-12 ">
+                                                    <span class="price-area">
+                                                        <span class="price ">625</span><span class="currency-symbol">₪</span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <html>
+    <head>
+        <style>
+            .container {
+                position: relative;
+                width: 50%;
+            }
+
+            .image {
+                opacity: 1;
+                display: block;
+                width: 100%;
+                height: auto;
+                transition: .5s ease;
+                backface-visibility: hidden;
+            }
+
+            .middle {
+                transition: .5s ease;
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%)
+            }
+
+            .container:hover .image {
+                opacity: 0.3;
+            }
+
+            .container:hover .middle {
+                opacity: 1;
+            }
+
+            .text {
+                background-color: #4CAF50;
+                color: white;
+                font-size: 16px;
+                padding: 16px 32px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Fade in a Box</h2>
+        <div class="container">
+            <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
+            <div class="middle">
+                <div class="text">John Doe</div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(".add_cart").click(function (e) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:44345/carts",
+                    data: {
+                        price: e.target.parentElement.parentElement.childNodes[9].textContent.split('Add')[0].trim(),
+                        name: e.target.parentElement.parentElement.childNodes[3].textContent.trim()
+                    },
+                    success: success,
+                    dataType: dataType
+                });
+            });
+        </script>
+    </body>
+</html>

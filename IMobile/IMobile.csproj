@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-IMobile-FFA8EA4D-BA84-422F-BD70-B35123E5A026</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Home\HomeController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\HomeController1.cshtml" />
+    <Content Remove="wwwroot\css\Class.css" />
+    <Content Remove="wwwroot\images\galaxtForBackground.jpg" />
+    <Content Remove="wwwroot\images\iphone11.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Home\htmlpage.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Auth.mvc" Version="1.41.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="microsoft.owin.security.facebook" Version="4.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
+  </ItemGroup>
+
+</Project>

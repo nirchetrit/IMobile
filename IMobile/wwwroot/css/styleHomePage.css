@@ -1,0 +1,223 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: url("images/nav_background.png");
+}
+
+
+
+
+    nav ul li a {
+        display: block;
+        margin-right: 20px;
+        width: 120px;
+        font-size: 14px;
+        line-height: 44px;
+        text-align: center;
+        text-decoration: none;
+        color: #777;
+    }
+
+    nav ul li.selected a {
+        color: #fff;
+    }
+
+    nav ul li.subscribe a {
+        margin-left: 22px;
+        padding-left: 33px;
+        text-align: left;
+        background: url("images/rss.png") left center no-repeat;
+    }
+
+
+
+.title subTitleWidthLong {
+    color: #FCEBEB
+}
+
+.sub_title_no_credit subTitleWidthLong {
+    color: #FCEBEB
+}
+
+body {
+    margin: 0 auto;
+    padding: 22px 0;
+    font: 13px/22px Helvetica, Arial, sans-serif;
+    background: #e9eced;
+}
+
+.welcome-text {
+    width: 600px;
+    height: 300px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 200px;
+    margin-right: 100px;
+}
+
+.neon {
+    position: relative;
+    overflow: hidden;
+    filter: brightness(100%);
+}
+
+.text {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    user-select: none;
+}
+
+    .text::before {
+        content: attr(data-text);
+        position: absolute;
+        color: white;
+        filter: blur(0.02em);
+        mix-blend-mode: difference;
+    }
+
+.gradient {
+    position: absolute;
+    background: linear-gradient(45deg, #d5dbdd, #9bf2fe, #ccd9db, #f3f0f0, #939fa4);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    mix-blend-mode: multiply;
+}
+
+.spotlight {
+    position: absolute;
+    top: -100%;
+    left: -80%;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient( circle, white, transparent 25% ) center / 25% 25%, radial-gradient( circle, white, black 25% ) center / 12.5% 12.5%;
+    animation: light 5s linear infinite;
+    mix-blend-mode: color-dodge;
+}
+
+@keyframes light {
+    to {
+        transform: translate(50%, 50%);
+    }
+}
+   
+
+
+
+.opacity {
+    width: 50%;
+    filter: opacity(50%);
+    border-radius: 8px;
+    background: #d5dbdd;
+    float: left;
+    margin-right:0px;
+}
+
+.sepia {
+    width: 50%;
+    -webkit-filter: sepia(100%);
+    filter: sepia(100%);
+    border-radius: 8px;
+    background: #d5dbdd;
+}
+
+
+
+.textonbox {
+    color: black;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 50px;
+}
+
+.parent {
+    width: 0px;
+    height: 0px;
+    color: #2163fe;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.box {
+    width: 200px;
+    height: 40px;
+    background: black;
+    font-size: 20px;
+    color: black;
+    margin-top: 5px;
+}
+
+    .box:hover {
+        background-color: #137AE9;
+        cursor: pointer;
+        color: black;
+        -webkit-transition: background-color 2s ease-out;
+        -moz-transition: background-color 2s ease-out;
+        -o-transition: background-color 2s ease-out;
+        transition: background-color 2s ease-out;
+    }
+
+.goodMorning {
+    color: #137AE9;
+    text-align: center;
+    font-family: "Lobster", serif;
+    font-size: 30px;
+    margin-top:10px;
+}
+.weather {
+    width: 200px;
+    height: 50px;
+    margin-top: 60px;
+    margin-left: 0px;
+    margin-right: 50px;
+}
+
+.block1 {
+    background: #d5dbdd;
+}
+
+
+.aside1 {
+    width:18%;
+    padding-left: .5rem;
+    margin-left: .5rem;
+    float: right;
+    box-shadow: inset 5px 0 5px -5px #29627e;
+    font-style: italic;
+    color: #29627e;
+}
+
+    .aside1 > pAside {
+        margin: .5rem;
+    }
+
+pAside {
+    font-family: 'Fira Sans', sans-serif;
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-right: 50px;
+}
+.aside2 {
+    width: 18%;
+    padding-left: .5rem;
+    margin-left: .5rem;
+    float: left;
+    box-shadow: inset 5px 0 5px -5px #29627e;
+    font-style: italic;
+    color: #29627e;
+}
+
+nav ul li a:hover {
+    color: #000 !important;
+}
