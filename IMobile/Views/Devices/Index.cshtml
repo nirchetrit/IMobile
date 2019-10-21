@@ -10,13 +10,13 @@
         <a asp-action="Create">Create New</a>
     </p>
     @using (Html.BeginForm())
-{
+    {
 
-}
+    }
     <form asp-action="Index" method="get">
         <div class="form-actions no-color">
             <p>
-                Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+                Find by name: <input type="text" name="SearchString" value="@ViewData[" currentFilter"]" />
                 <input type="submit" value="Search" class="btn btn-default" /> |
                 <a asp-action="Index">Back to Full List</a>
             </p>
@@ -25,24 +25,24 @@
     <form asp-action="Index" method="get">
         <div class="form-actions no-color">
             <p>
-                Find by Manufacture: <input type="text" name="Manufacture" value="@ViewData["Manufacture"]" />
+                Find by Manufacture: <input type="text" name="Manufacture" value="@ViewData[" Manufacture"]" />
                 <input type="submit" value="Apply" class="btn btn-default" /> |
                 <a asp-action="Index">Back to Full List</a>
             </p>
             <p>
-                Find by minprice: <input type="text" name="minprice" value="@ViewData["minprice"]" />
+                Find by minprice: <input type="text" name="minprice" value="@ViewData[" minprice"]" />
                 <input type="submit" value="Apply" class="btn btn-default" /> |
             </p>
             <p>
-                Find by maxprice: <input type="text" name="maxprice" value="@ViewData["maxprice"]" />
+                Find by maxprice: <input type="text" name="maxprice" value="@ViewData[" maxprice"]" />
                 <input type="submit" value="Apply" class="btn btn-default" /> |
             </p>
             <p>
-                Find by maxram: <input type="text" name="maxram" value="@ViewData["maxram"]" />
+                Find by maxram: <input type="text" name="maxram" value="@ViewData[" maxram"]" />
                 <input type="submit" value="Apply" class="btn btn-default" /> |
             </p>
             <p>
-                Find by minram: <input type="text" name="minram" value="@ViewData["minram"]" />
+                Find by minram: <input type="text" name="minram" value="@ViewData[" minram"]" />
                 <input type="submit" value="Apply" class="btn btn-default" /> |
             </p>
         </div>
@@ -52,10 +52,10 @@
             <tr>
 
                 <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Manufacture)</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData[" NameSortParm"]">@Html.DisplayNameFor(model => model.Manufacture)</a>
                 </th>
                 <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Name)</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData[" NameSortParm"]">@Html.DisplayNameFor(model => model.Name)</a>
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.ImageUrl)
@@ -64,13 +64,13 @@
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
                 <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["PriceSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData[" PriceSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.ScreenSize)
                 </th>
                 <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["MemorySortParm"]">@Html.DisplayNameFor(model => model.Memory)</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData[" MemorySortParm"]">@Html.DisplayNameFor(model => model.Memory)</a>
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.RamMemory)
@@ -83,7 +83,7 @@
         </thead>
         <tbody>
             @foreach (var item in Model)
-        {
+            {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Manufacture)
@@ -118,7 +118,7 @@
                     <a asp-action="Delete" asp-route-id="@item.DeviceID">Delete</a>
                 </td>
             </tr>
-        }
+            }
         </tbody>
     </table>
 
@@ -164,8 +164,8 @@
                     </div>
                 </a>
             </div>
-            </div>
-</div>
+        </div>
+    </div>
 
     <html>
     <head>
@@ -222,4 +222,4 @@
         </div>
 
     </body>
-    </html>
+</html>
