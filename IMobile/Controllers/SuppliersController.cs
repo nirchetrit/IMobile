@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace IMobile.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
 
     public class SuppliersController : Controller
     {

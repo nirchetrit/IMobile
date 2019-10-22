@@ -1,4 +1,5 @@
 ﻿using IMobile.Models;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,9 @@ namespace IMobile.Data
     {
         public static void Initialize(IMobileContext context)
         {
-            context.Database.EnsureCreated();
+
+        
+        context.Database.EnsureCreated();
             
              // Look for any students.
              if (context.Device.Any())
