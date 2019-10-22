@@ -26,5 +26,7 @@ namespace IMobile.Models
 
         public DbSet<IMobile.Models.Supplier> Supplier { get; set; }
 
+        public DbSet<IMobile.Models.Branches> Branches { get; set; }
+
     }
 }
