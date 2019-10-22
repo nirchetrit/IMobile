@@ -28,5 +28,7 @@ namespace IMobile.Models
 
         public DbSet<IMobile.Models.Branches> Branches { get; set; }
 
+        public DbSet<IMobile.Models.Contact> Contact { get; set; }
+
     }
 }

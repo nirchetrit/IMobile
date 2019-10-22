@@ -10,36 +10,24 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace IMobile.Controllers
 {
-    //[Authorize(Roles = "Admin")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
 
-    public class SuppliersController : Controller
+    public class ContactsController : Controller
     {
         private readonly IMobileContext _context;
 
-        public SuppliersController(IMobileContext context)
+        public ContactsController(IMobileContext context)
         {
             _context = context;
         }
 
-        // GET: Suppliers
-        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        // GET: Contacts
+        public async Task<IActionResult> Index()
         {
-            ViewData["CurrentFilter"] = searchString;
-
-
-            var supplier = from s in _context.Supplier
-                          select s;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                supplier = supplier.Where(s => s.Name.Contains(searchString));
-            }
-        
-            return View(await supplier.AsNoTracking().ToListAsync());
+            return View(await _context.Contact.ToListAsync());
         }
 
-        // GET: Suppliers/Details/5
+        // GET: Contacts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -47,44 +35,39 @@ namespace IMobile.Controllers
                 return NotFound();
             }
 
-
-            var supplier = await _context.Supplier.Include(s=>s.AccList)
-                .Include(s => s.DeviceList)
-                     .AsNoTracking()
-                    .FirstOrDefaultAsync(m => m.SupplierID == id);
-
-
-            if (supplier == null)
+            var contact = await _context.Contact
+                .FirstOrDefaultAsync(m => m.ContactId == id);
+            if (contact == null)
             {
                 return NotFound();
             }
 
-            return View(supplier);
+            return View(contact);
         }
 
-        // GET: Suppliers/Create
+        // GET: Contacts/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Suppliers/Create
+        // POST: Contacts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SupplierID,Name")] Supplier supplier)
+        public async Task<IActionResult> Create([Bind("ContactId,OwnerID,Name,Address,City,State,Zip,Email,Status")] Contact contact)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(supplier);
+                _context.Add(contact);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(supplier);
+            return View(contact);
         }
 
-        // GET: Suppliers/Edit/5
+        // GET: Contacts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -92,22 +75,22 @@ namespace IMobile.Controllers
                 return NotFound();
             }
 
-            var supplier = await _context.Supplier.FindAsync(id);
-            if (supplier == null)
+            var contact = await _context.Contact.FindAsync(id);
+            if (contact == null)
             {
                 return NotFound();
             }
-            return View(supplier);
+            return View(contact);
         }
 
-        // POST: Suppliers/Edit/5
+        // POST: Contacts/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("SupplierID,Name")] Supplier supplier)
+        public async Task<IActionResult> Edit(int id, [Bind("ContactId,OwnerID,Name,Address,City,State,Zip,Email,Status")] Contact contact)
         {
-            if (id != supplier.SupplierID)
+            if (id != contact.ContactId)
             {
                 return NotFound();
             }
@@ -116,12 +99,12 @@ namespace IMobile.Controllers
             {
                 try
                 {
-                    _context.Update(supplier);
+                    _context.Update(contact);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SupplierExists(supplier.SupplierID))
+                    if (!ContactExists(contact.ContactId))
                     {
                         return NotFound();
                     }
@@ -132,10 +115,10 @@ namespace IMobile.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(supplier);
+            return View(contact);
         }
 
-        // GET: Suppliers/Delete/5
+        // GET: Contacts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -143,30 +126,30 @@ namespace IMobile.Controllers
                 return NotFound();
             }
 
-            var supplier = await _context.Supplier
-                .FirstOrDefaultAsync(m => m.SupplierID == id);
-            if (supplier == null)
+            var contact = await _context.Contact
+                .FirstOrDefaultAsync(m => m.ContactId == id);
+            if (contact == null)
             {
                 return NotFound();
             }
 
-            return View(supplier);
+            return View(contact);
         }
 
-        // POST: Suppliers/Delete/5
+        // POST: Contacts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var supplier = await _context.Supplier.FindAsync(id);
-            _context.Supplier.Remove(supplier);
+            var contact = await _context.Contact.FindAsync(id);
+            _context.Contact.Remove(contact);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool SupplierExists(int id)
+        private bool ContactExists(int id)
         {
-            return _context.Supplier.Any(e => e.SupplierID == id);
+            return _context.Contact.Any(e => e.ContactId == id);
         }
     }
 }
