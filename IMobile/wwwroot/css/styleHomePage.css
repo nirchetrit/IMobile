@@ -108,6 +108,7 @@ body {
     font-size: 30px;
     margin-top: 10px;
 }
+
 .weather {
     width: 200px;
     height: 50px;
@@ -122,7 +123,7 @@ body {
 
 
 .aside1 {
-    width:18%;
+    width: 18%;
     padding-left: .5rem;
     margin-left: .5rem;
     float: right;
@@ -141,5 +142,3 @@ pAside {
     margin-left: 0px;
     margin-right: 50px;
 }
-
-

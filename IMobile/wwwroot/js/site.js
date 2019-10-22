@@ -4,11 +4,6 @@
 // Write your JavaScript code.
 
 /* When the input field receives input, convert the value from fahrenheit to celsius */
-var url = 'https://newsapi.org/v2/top-headlines?' +
-    'country=us&' +
-    'apiKey=296d91888e5347b49bf9dc9574843ea3';
-var req = new Request(url);
-fetch(req)
-    .then(function (response) {
-        console.log(response.json());
-    })
+$('.trigger, .slider').click(function () {
+    $('.slider').toggleClass('close');
+});
