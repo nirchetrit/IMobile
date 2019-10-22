@@ -2,8 +2,3 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-
-/* When the input field receives input, convert the value from fahrenheit to celsius */
-$('.trigger, .slider').click(function () {
-    $('.slider').toggleClass('close');
-});
