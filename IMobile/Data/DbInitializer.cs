@@ -14,16 +14,16 @@ namespace IMobile.Data
 
         
         context.Database.EnsureCreated();
-            
-             // Look for any students.
-             if (context.Device.Any())
+
+            // Look for any students.
+            if (context.Device.Any())
              {
                  return;   // DB has been seeded
              }
 
+
+
             
-
-
 
             
            var suppliers = new Supplier[]
@@ -67,6 +67,19 @@ namespace IMobile.Data
            new Accessorie{Manufacture="Apple", Name="Charger", Price=90,SupplierID=2},
            new Accessorie{Manufacture="Samsung", Name="Charger", Price=70,SupplierID=4},
            new Accessorie{Manufacture="Xiaomi", Name="Charger", Price=40,SupplierID=1},
+           new Accessorie{Manufacture="Apple", Name="headphones", Price=130,SupplierID=2},
+           new Accessorie{Manufacture="Samsung", Name="headphones", Price=99,SupplierID=3},
+           new Accessorie{Manufacture="Xiaomi", Name="headphones", Price=69,SupplierID=1},
+           new Accessorie{Manufacture="Apple", Name="iphone xs max case", Price=49,SupplierID=2},
+           new Accessorie{Manufacture="Samsung", Name="galaxy Note 9 case", Price=49,SupplierID=3},
+           new Accessorie{Manufacture="Xiaomi", Name="Xiaomi Mi 9 case", Price=49,SupplierID=4},
+           new Accessorie{Manufacture="Samsung", Name="galaxy Note 8 case", Price=49,SupplierID=2},
+           new Accessorie{Manufacture="Samsung", Name="galaxy S10 case", Price=49,SupplierID=3},
+           new Accessorie{Manufacture="Samsung", Name="galaxy A50 case", Price=49,SupplierID=3},
+           new Accessorie{Manufacture="Xiaomi", Name="Xiaomi Mi 9  blue case", Price=49,SupplierID=2},
+           new Accessorie{Manufacture="Samsung", Name="External charger", Price=199,SupplierID=2},
+           new Accessorie{Manufacture="Samsung", Name="galaxy s8 screen protect", Price=49,SupplierID=3},
+           new Accessorie{Manufacture="Samsung", Name="galaxy Note 8 Battery", Price=49,SupplierID=4},
 
 
            };
@@ -108,6 +121,9 @@ namespace IMobile.Data
                 context.CartItemDevice.Add(s);
             }
             context.SaveChanges();
+
+
+            
         }
     }
 }
