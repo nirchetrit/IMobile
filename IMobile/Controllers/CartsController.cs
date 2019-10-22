@@ -27,11 +27,11 @@ namespace IMobile.Controllers
         }
 
         // GET: Carts/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string id)
         {
             var userid = User.Identity.Name;
 
-              if (id == null)
+              if (!id.Equals(null))
               {
                   return NotFound();
               }
@@ -158,5 +158,11 @@ namespace IMobile.Controllers
         {
             return _context.Cart.Any(e => e.CartID == id);
         }
+       
+
+     //  public async Task<IActionResult> AddToCart (int DeviceId)
+     //  {
+     //      
+     //  }
     }
 }

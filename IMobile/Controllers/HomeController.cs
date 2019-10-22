@@ -33,6 +33,12 @@ namespace IMobile.Controllers
         {
             return View();
         }
+        public IActionResult Statistics()
+        {
+            //  ViewData["Message"] = "Our Statistics page.";
+
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

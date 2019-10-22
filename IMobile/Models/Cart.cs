@@ -8,7 +8,7 @@ namespace IMobile.Models
     public class Cart
     {
         public int CartID { get; set; }
-        public int UserID { get; set; }
+        public string UserID { get; set; }
         public ICollection<CartItemAcc> AccList { get; set; }
         public ICollection<CartItemDevice> DeviceList { get; set; }
     }
