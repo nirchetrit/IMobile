@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using IMobile.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+
 
 namespace IMobile.Areas.Identity.Pages.Account
 {
@@ -68,6 +70,17 @@ namespace IMobile.Areas.Identity.Pages.Account
             {
                 var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
+
+                //var cart = new Cart { UserID = user.Id };
+
+             //  return  RedirectToAction("Carts", "Create");
+             
+
+
+
+
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
