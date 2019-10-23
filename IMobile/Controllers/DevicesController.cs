@@ -233,7 +233,18 @@ namespace IMobile.Controllers
 
 
 
-       
+        public async Task<IActionResult> Statistics()
+        {
+            var devices = from s in _context.Device
+                          select s;
+            if (devices == null)
+            {
+                return NotFound();
+            }
+
+            return View(await devices.AsNoTracking().ToListAsync());
+
+        }
 
 
 
