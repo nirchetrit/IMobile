@@ -152,20 +152,7 @@ namespace IMobile.Controllers
 
 
 
-        public async Task<IActionResult> Map(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var branches = await _context.Branches.FindAsync(id);
-            if (branches == null)
-            {
-                return NotFound();
-            }
-            return View(branches);
-        }
+        
 
 
 
