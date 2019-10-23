@@ -5,10 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IMobile.Models;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace IMobile.Controllers
 {
+    [Authorize]
+    
     public class DevicesController : Controller
     {
         private readonly IMobileContext _context;
@@ -119,6 +121,7 @@ namespace IMobile.Controllers
         }
 
         // GET: Devices/Create
+        [Area("Admin")]
         public IActionResult Create()
         {
             ViewData["SupplierID"] = new SelectList(_context.Supplier, "SupplierID", "Name");
@@ -129,6 +132,7 @@ namespace IMobile.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Area("Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("DeviceID,Manufacture,Name,ImageUrl,Description,Price,ScreenSize,Memory,RamMemory,SupplierID")] Device device)
         {
@@ -143,6 +147,7 @@ namespace IMobile.Controllers
         }
 
         // GET: Devices/Edit/5
+        [Area("Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -164,6 +169,7 @@ namespace IMobile.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Area("Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("DeviceID,Manufacture,Name,ImageUrl,Description,Price,ScreenSize,Memory,RamMemory,SupplierID")] Device device)
         {
             if (id != device.DeviceID)
@@ -196,6 +202,7 @@ namespace IMobile.Controllers
         }
 
         // GET: Devices/Delete/5
+        [Area("Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

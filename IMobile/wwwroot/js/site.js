@@ -97,3 +97,21 @@ function createsoundbite(sound) {
 var mouseoversound = createsoundbite("http://www.cartelle.nl/media/audio/tick.ogg", "http://www.cartelle.nl/media/audio/tick.mp3")
 var clicksound = createsoundbite("http://www.ultranoir.com/cdn/gene/sound/clack.ogg", "http://www.ultranoir.com/cdn/gene/sound/clack.m4a")
 
+// slide picture
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = x.length }
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    x[slideIndex - 1].style.display = "block";
+}
