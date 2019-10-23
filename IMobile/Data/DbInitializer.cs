@@ -16,10 +16,10 @@ namespace IMobile.Data
         context.Database.EnsureCreated();
 
             // Look for any students.
-           //if (context.Device.Any())
-           // {
-           //     return;   // DB has been seeded
-           // }
+           if (context.Device.Any())
+            {
+              return;   // DB has been seeded
+            }
 
 
             
