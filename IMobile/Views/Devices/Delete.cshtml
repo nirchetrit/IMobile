@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<link rel="stylesheet" href="~/css/NavBar.css" />
 
 <h2>Delete</h2>
 
@@ -66,7 +67,7 @@
             @Html.DisplayFor(model => model.Supplier.Name)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="DeviceID" />
         <input type="submit" value="Delete" class="btn btn-default" /> |

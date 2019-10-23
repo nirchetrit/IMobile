@@ -1,6 +1,18 @@
-﻿<!DOCTYPE html>
+﻿@{
+    ViewData["Title"] = "Devices Page";
+}
+
+
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8" />
+    <title>IMobile Store HomePage</title>
+    <link rel="stylesheet" href="~/css/DeviceIndex.css" />
+    <link rel="stylesheet" href="~/css/NavBar.css" />
+    <link rel="stylesheet" href="~/js/site.js" />
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -10,50 +22,42 @@
 
         });
     </script>
-    <style>
 
-        .panel, #flip {
-            padding: 5px;
-            text-align: center;
-            color: aliceblue;
-            background-color: #000000;
-            border: solid 1px #c3c3c3;
-        }
-
-        .panel {
-            padding: 50px;
-        }
-
-            .panel h1 {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            }
-
-            .panel h2 {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            }
-
-            .panel h4 {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                color: #c3c3c3;
-            }
-    </style>
 </head>
 <body>
 
     <div id="flip">
-        Click to ALL Devices
+        >>> Click to ALL Devices <<<
 
     </div>
     <div class="panel">
         <img src="~/images/TakeCloserLook.jpeg" alt="Iphone11" class="img-responsive" />
         <p>
-            <h1>IPHONE 11</h1>
+            <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+            <div class="iphone">
+                <h1>
+                    IPHONE 11
+                    <span class="txt-rotate"
+                          data-period="2000"
+                          data-rotate='[ "4K video.", "Shoot it.", "Flip it.", "Zoom it.", "Light it.", "Tweak it.", "LOVE IT." ]'></span>
+                </h1>
+            </div>
+            <h2>A single &lt;span&gt; is all you need.</h2>
+
             <h2>Pro cameras. Pro display. Pro performance</h2>
             <h4>From $24.95/mo . or $599 with trade in</h4>
             <a class="btn btn-md-default" asp-controller="Devices" asp-action="Details/5" style="color:#6192f7">
                 <h3>Learn more ></h3>
             </a>
         </p>
+    </div>
+
+    <div class="one">
+
+        <img src="images/3754004820_91a5c238a0.jpg" alt="" />
+
+        <h2>A Movie in the Park:<br />Kung Fu Panda</h2>
+
     </div>
 
 
