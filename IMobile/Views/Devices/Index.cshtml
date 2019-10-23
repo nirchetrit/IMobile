@@ -1,234 +1,234 @@
 ﻿@model IEnumerable<IMobile.Models.Device>
-@{
+    @{
     ViewData["Title"] = "Devices Page";
-}
+    }
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>IMobile Store HomePage</title>
-    <link rel="stylesheet" href="~/css/DeviceIndex.css" />
-    <link rel="stylesheet" href="~/css/NavBar.css" />
-    <link rel="stylesheet" href="~/js/site.js" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>IMobile Store HomePage</title>
+        <link rel="stylesheet" href="~/css/DeviceIndex.css" />
+        <link rel="stylesheet" href="~/css/NavBar.css" />
+        <link rel="stylesheet" href="~/js/site.js" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#flip").click(function () {
-                $(".panel").slideToggle("slow");
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#flip").click(function () {
+                    $(".panel").slideToggle("slow");
+                });
+
             });
+        </script>
 
-        });
-    </script>
+    </head>
+    <body>
 
-</head>
-<body>
+        <div id="flip">
+            >>> Click to Close <<<
 
-    <div id="flip">
-        >>> Click to Close <<<
-
-    </div>
-    <div class="panel">
-        <img src="~/images/TakeCloserLook.jpeg" alt="Iphone11" class="img-responsive" />
-        <p>
-            <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
-            <div class="iphone">
-                <h1>
-                    IPHONE 11.
-                    <span class="txt-rotate"
-                          data-period="2000"
-                          data-rotate='[ "4K video.", "Shoot it.", "Flip it.", "Zoom it.", "Light it.", "Tweak it.", "LOVE IT." ]'></span>
-                </h1>
-            </div>
-            <h2 style="    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-">
-                Is All You Need.
-            </h2>
-
-            <h2>Pro cameras. Pro display. Pro performance</h2>
-            <h4>From $24.95/mo . or $599 with trade in</h4>
-            <a class="btn btn-md-default" asp-controller="Devices" asp-action="Details/5" style="color:#6192f7">
-                <h3>Learn more ></h3>
-            </a>
-        </p>
-    </div>
-
-    <div class="Alldevices">
-        <h3> iPhone 11 Pro Max Camera 4K Video Test!</h3>
-        <h2 style="color:white">Hover here (V) to play</h2>
-
-        <div class="thumb" onclick="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
-            <video unmuted id="video1" onmouseover="this.play()" onmouseout="this.pause()">
-                <source src="~/images/iPhone11video.mp4" type="video/mp4">
-                <source src="mov_bbb.ogg" type="video/ogg">
-                Your browser does not support HTML5 video.
-            </video>
         </div>
-
-        <div class="thumb" onclick="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
-            <video unmuted id="video2" onmouseover="this.play()" onmouseout="this.pause()">
-                <source src="http://mazwai.com/system/posts/videos/000/000/148/preview_mp4/kenji_kawasawa-106_balloons.mp4" type="video/mp4">
-                <source src="mov_bbb.ogg" type="video/ogg">
-                Your browser does not support HTML5 video.
-            </video>
-        </div>
-
-        <div class="thumb" onclick="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
-            <video unmuted loop id="video3" onmouseover="this.play()" onmouseout="this.pause()">
-                <source src="http://mazwai.com/system/posts/videos/000/000/123/preview_mp4/victor_ciurus--5d_mark_iii_magic_lantern_14_bits_raw_video.mp4" type="video/mp4">
-                <source src="mov_bbb.ogg" type="video/ogg">
-                Your browser does not support HTML5 video.
-            </video>
-        </div>
-
-        <div class="thumb" onclick="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
-            <video unmuted id="video4" onmouseover="this.play()" onmouseout="this.pause()">
-                <source src="http://mazwai.com/system/posts/videos/000/000/087/preview_mp4_2/raoul-kopacka__two-horned-chameleon.mp4" type="video/mp4">
-                <source src="mov_bbb.ogg" type="video/ogg">
-                Your browser does not support HTML5 video.
-            </video>
-        </div>
-
-    </div>
-
-
-    <form asp-action="Index" method="get">
-        <div class="form-actions no-color">
+        <div class="panel">
+            <img src="~/images/TakeCloserLook.jpeg" alt="Iphone11" class="img-responsive" />
             <p>
-                Find by name: <input type="text" name="SearchString" value="@ViewData[" currentFilter"]" />
-                <input type="submit" value="Search" class="btn btn-default" /> |
-                <a asp-action="Index">Back to Full List</a>
+                <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+                <div class="iphone">
+                    <h1>
+                        IPHONE 11.
+                        <span class="txt-rotate"
+                              data-period="2000"
+                              data-rotate='[ "4K video.", "Shoot it.", "Flip it.", "Zoom it.", "Light it.", "Tweak it.", "LOVE IT." ]'></span>
+                    </h1>
+                </div>
+                <h2 style="    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+">
+                    Is All You Need.
+                </h2>
+
+                <h2>Pro cameras. Pro display. Pro performance</h2>
+                <h4>From $24.95/mo . or $599 with trade in</h4>
+                <a class="btn btn-md-default" asp-controller="Devices" asp-action="Details/5" style="color:#6192f7">
+                    <h3>Learn more ></h3>
+                </a>
             </p>
         </div>
-    </form>
-    <form asp-action="Index" method="get">
-        <div class="form-actions no-color">
 
-            Find by Manufacture: <input type="text" name="Manufacture" value="@ViewData[" Manufacture"]" />
-            <input type="submit" value="Apply" class="btn btn-default" /> |
-            <a asp-action="Index">Back to Full List</a>
+        <div class="Alldevices">
+            <h3> iPhone 11 Pro Max Camera 4K Video Test!</h3>
+            <h2 style="color:white">Hover here (V) to play</h2>
 
+            <div class="thumb" onclick="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
+                <video unmuted id="video1" onmouseover="this.play()" onmouseout="this.pause()">
+                    <source src="~/images/iPhone11video.mp4" type="video/mp4">
+                    <source src="mov_bbb.ogg" type="video/ogg">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
 
-            Find by minprice: <input type="text" name="minprice" value="@ViewData[" minprice"]" />
-            <input type="submit" value="Apply" class="btn btn-default" /> |
+            <div class="thumb" onclick="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
+                <video unmuted id="video2" onmouseover="this.play()" onmouseout="this.pause()">
+                    <source src="http://mazwai.com/system/posts/videos/000/000/148/preview_mp4/kenji_kawasawa-106_balloons.mp4" type="video/mp4">
+                    <source src="mov_bbb.ogg" type="video/ogg">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
 
+            <div class="thumb" onclick="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
+                <video unmuted loop id="video3" onmouseover="this.play()" onmouseout="this.pause()">
+                    <source src="http://mazwai.com/system/posts/videos/000/000/123/preview_mp4/victor_ciurus--5d_mark_iii_magic_lantern_14_bits_raw_video.mp4" type="video/mp4">
+                    <source src="mov_bbb.ogg" type="video/ogg">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
 
-            Find by maxprice: <input type="text" name="maxprice" value="@ViewData[" maxprice"]" />
-            <input type="submit" value="Apply" class="btn btn-default" /> |
-
-
-            Find by maxram: <input type="text" name="maxram" value="@ViewData[" maxram"]" />
-            <input type="submit" value="Apply" class="btn btn-default" /> |
-
-            Find by minram: <input type="text" name="minram" value="@ViewData[" minram"]" />
-            <input type="submit" value="Apply" class="btn btn-default" /> |
+            <div class="thumb" onclick="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
+                <video unmuted id="video4" onmouseover="this.play()" onmouseout="this.pause()">
+                    <source src="http://mazwai.com/system/posts/videos/000/000/087/preview_mp4_2/raoul-kopacka__two-horned-chameleon.mp4" type="video/mp4">
+                    <source src="mov_bbb.ogg" type="video/ogg">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
 
         </div>
-    </form>
 
 
-    <div class="imeg">
-        <h2 style="color:white">News !!!!!</h2>
-
-        <div class="row">
-            <div class="column">
-                <h2>Galaxy S10</h2>
-                <h5></h5>
+        <form asp-action="Index" method="get">
+            <div class="form-actions no-color">
+                <p>
+                    Find by name: <input type="text" name="SearchString" value="@ViewData[" currentFilter"]" />
+                    <input type="submit" value="Search" class="btn btn-default" /> |
+                    <a asp-action="Index">Back to Full List</a>
+                </p>
             </div>
-            <div class="column">
-                <img src="~/images/Galaxy s10White.jpeg" alt="Forest" style="width:200px; height:250px;">
+        </form>
+        <form asp-action="Index" method="get">
+            <div class="form-actions no-color">
+
+                Find by Manufacture: <input type="text" name="Manufacture" value="@ViewData[" Manufacture"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+                <a asp-action="Index">Back to Full List</a>
+
+
+                Find by minprice: <input type="text" name="minprice" value="@ViewData[" minprice"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+
+
+                Find by maxprice: <input type="text" name="maxprice" value="@ViewData[" maxprice"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+
+
+                Find by maxram: <input type="text" name="maxram" value="@ViewData[" maxram"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+
+                Find by minram: <input type="text" name="minram" value="@ViewData[" minram"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+
             </div>
-            <div class="column">
-                <img src="~/images/Galaxy s10.jpeg" alt="Mountains" style="width:200px; height:250px;">
+        </form>
+
+
+        <div class="imeg">
+            <h2 style="color:white">News !!!!!</h2>
+
+            <div class="row">
+                <div class="column">
+                    <h2>Galaxy S10</h2>
+                    <h5></h5>
+                </div>
+                <div class="column">
+                    <img src="~/images/Galaxy s10White.jpeg" alt="Forest" style="width:200px; height:250px;">
+                </div>
+                <div class="column">
+                    <img src="~/images/Galaxy s10.jpeg" alt="Mountains" style="width:200px; height:250px;">
+                </div>
             </div>
         </div>
-    </div>
 
-    <table class="table">
-    <thead>
-        <tr>
+        <table class="table">
+            <thead>
+                <tr>
 
-            <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData[" NameSortParm"]">@Html.DisplayNameFor(model => model.Manufacture)</a>
-            </th>
-            <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData[" NameSortParm"]">@Html.DisplayNameFor(model => model.Name)</a>
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData[" PriceSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ScreenSize)
-            </th>
-            <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData[" MemorySortParm"]">@Html.DisplayNameFor(model => model.Memory)</a>
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RamMemory)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Supplier)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Manufacture)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ImageUrl)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ScreenSize)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Memory)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RamMemory)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Supplier.Name)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.DeviceID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.DeviceID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.DeviceID">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData[" NameSortParm"]">@Html.DisplayNameFor(model => model.Manufacture)</a>
+                    </th>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData[" NameSortParm"]">@Html.DisplayNameFor(model => model.Name)</a>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ImageUrl)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData[" PriceSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ScreenSize)
+                    </th>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData[" MemorySortParm"]">@Html.DisplayNameFor(model => model.Memory)</a>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RamMemory)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Supplier)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Manufacture)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImageUrl)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ScreenSize)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Memory)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RamMemory)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Supplier.Name)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.DeviceID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.DeviceID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.DeviceID">Delete</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
 
-    <div class="people" style="margin-top:50px;">
-        <br />
-        <h1 style="color:aliceblue; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"> “OK, everyone, scooch out a bit.”</h1>
-        <img src="~/images/iphone11people.jpeg" alt="Mountains" style="width:100%">
-    </div>
+        <div class="people" style="margin-top:50px;">
+            <br />
+            <h1 style="color:aliceblue; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"> “OK, everyone, scooch out a bit.”</h1>
+            <img src="~/images/iphone11people.jpeg" alt="Mountains" style="width:100%">
+        </div>
 
-</body>
+    </body>
 </html>
 
