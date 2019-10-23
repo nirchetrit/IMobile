@@ -25,9 +25,9 @@
 
 </head>
 <body>
-    
+
     <div id="flip">
-        >>> Click to ALL Devices <<<
+        >>> Click to Close <<<
 
     </div>
     <div class="panel">
@@ -42,7 +42,10 @@
                           data-rotate='[ "4K video.", "Shoot it.", "Flip it.", "Zoom it.", "Light it.", "Tweak it.", "LOVE IT." ]'></span>
                 </h1>
             </div>
-            <h2>Is All You Need.</h2>
+            <h2 style="    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+">
+                Is All You Need.
+            </h2>
 
             <h2>Pro cameras. Pro display. Pro performance</h2>
             <h4>From $24.95/mo . or $599 with trade in</h4>
@@ -52,12 +55,84 @@
         </p>
     </div>
 
+    <div class="Alldevices">
+        <h3> iPhone 11 Pro Max Camera 4K Video Test!</h3>
+        <h2 style="color:white">Hover here (V) to play</h2>
 
-    <div class="one">
+        <div class="thumb" onclick="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
+            <video unmuted id="video1" onmouseover="this.play()" onmouseout="this.pause()">
+                <source src="~/images/iPhone11video.mp4" type="video/mp4">
+                <source src="mov_bbb.ogg" type="video/ogg">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
 
-        <img src="~/images/Galaxy s10.jpeg" alt="" />
+        <div class="thumb" onclick="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
+            <video unmuted id="video2" onmouseover="this.play()" onmouseout="this.pause()">
+                <source src="http://mazwai.com/system/posts/videos/000/000/148/preview_mp4/kenji_kawasawa-106_balloons.mp4" type="video/mp4">
+                <source src="mov_bbb.ogg" type="video/ogg">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
 
-        <h2>A Movie in the Park:<br />Kung Fu Panda</h2>
+        <div class="thumb" onclick="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
+            <video unmuted loop id="video3" onmouseover="this.play()" onmouseout="this.pause()">
+                <source src="http://mazwai.com/system/posts/videos/000/000/123/preview_mp4/victor_ciurus--5d_mark_iii_magic_lantern_14_bits_raw_video.mp4" type="video/mp4">
+                <source src="mov_bbb.ogg" type="video/ogg">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+
+        <div class="thumb" onclick="clicksound.playclip()" onMouseover="mouseoversound.playclip()">
+            <video unmuted id="video4" onmouseover="this.play()" onmouseout="this.pause()">
+                <source src="http://mazwai.com/system/posts/videos/000/000/087/preview_mp4_2/raoul-kopacka__two-horned-chameleon.mp4" type="video/mp4">
+                <source src="mov_bbb.ogg" type="video/ogg">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+    </div>
+
+    <form asp-action="Index" method="get">
+        <div class="form-actions no-color">
+            <p>
+                Find by name: <input type="text" name="SearchString" value="@ViewData[" currentFilter"]" />
+                <input type="submit" value="Search" class="btn btn-default" /> |
+                <a asp-action="Index">Back to Full List</a>
+            </p>
+        </div>
+    </form>
+    <form asp-action="Index" method="get">
+        <div class="form-actions no-color">
+           
+                Find by Manufacture: <input type="text" name="Manufacture" value="@ViewData[" Manufacture"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+                <a asp-action="Index">Back to Full List</a>
+            
+            
+                Find by minprice: <input type="text" name="minprice" value="@ViewData[" minprice"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+           
+            
+                Find by maxprice: <input type="text" name="maxprice" value="@ViewData[" maxprice"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+           
+           
+                Find by maxram: <input type="text" name="maxram" value="@ViewData[" maxram"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+           
+                Find by minram: <input type="text" name="minram" value="@ViewData[" minram"]" />
+                <input type="submit" value="Apply" class="btn btn-default" /> |
+           
+        </div>
+    </form>
+
+    <div class="container">
+        <h1 style="color:white">Iphone's</h1>
+        <img src="~/images/Galaxy s10.jpeg" alt="Snow" style="margin-right:100%;">
+        <div class="bottom-left">Galaxy S10</div>
+        <a class="btn btn-md custom-btn" asp-controller="Devices" asp-action="Details/1" style="font-size:17px; color:blue">
+            Learn more
+        </a>
 
     </div>
 

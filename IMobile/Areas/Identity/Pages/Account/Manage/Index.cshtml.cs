@@ -14,15 +14,18 @@ namespace IMobile.Areas.Identity.Pages.Account.Manage
     public partial class IndexModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IEmailSender _emailSender;
 
         public IndexModel(
             UserManager<IdentityUser> userManager,
+             RoleManager<IdentityRole> roleManager,
             SignInManager<IdentityUser> signInManager,
             IEmailSender emailSender)
         {
             _userManager = userManager;
+            _roleManager = roleManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
         }
@@ -59,7 +62,8 @@ namespace IMobile.Areas.Identity.Pages.Account.Manage
             var userName = await _userManager.GetUserNameAsync(user);
             var email = await _userManager.GetEmailAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-
+            await _roleManager.CreateAsync(new IdentityRole("Admin"));
+            await _userManager.AddToRoleAsync(user, "Admin");
             Username = userName;
 
             Input = new InputModel
