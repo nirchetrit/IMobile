@@ -53,7 +53,7 @@ namespace IMobile.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Address")] Branches branches)
+        public async Task<IActionResult> Create([Bind("ID,Name,Address, Latitude, Longitude")] Branches branches)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace IMobile.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Address")] Branches branches)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Address, Latitude, Longitude")] Branches branches)
         {
             if (id != branches.ID)
             {
@@ -148,5 +148,26 @@ namespace IMobile.Controllers
         {
             return _context.Branches.Any(e => e.ID == id);
         }
+
+
+
+
+        public async Task<IActionResult> Map(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var branches = await _context.Branches.FindAsync(id);
+            if (branches == null)
+            {
+                return NotFound();
+            }
+            return View(branches);
+        }
+
+
+
     }
 }
