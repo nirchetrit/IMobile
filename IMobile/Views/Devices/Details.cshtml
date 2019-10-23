@@ -72,6 +72,27 @@
         <dd>
             @Html.DisplayFor(model => model.ViewCounter)
         </dd>
+        
+        <dd>
+           / @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+        
+
+        <script type="text/javascript">
+
+            var segment_str = window.location.pathname; // return segment1/segment2/segment3/segment4
+            var segment_array = segment_str.split('/');
+            var last_segment = segment_array.pop();
+              
+            var x = document.createElement("IMG");
+            x.setAttribute("src", `https://localhost:44345/images/${last_segment}.png`);
+            x.setAttribute("width", "150");
+            x.setAttribute("height", "150");
+            document.body.appendChild(x);
+              
+              
+        </script>
+
     </dl>
 </div>
 <div>
@@ -95,8 +116,10 @@
 </html>
 
 <!--End Api Facebook share-->
+    
+    
 
-<br><br>
+    <br><br>
 
 <a asp-action="Edit" asp-route-id="@Model.DeviceID">Edit</a> |
 <a asp-action="Index">Back to List</a>
