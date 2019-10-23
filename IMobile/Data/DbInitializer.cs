@@ -22,9 +22,7 @@ namespace IMobile.Data
              }
 
 
-
             
-
             
            var suppliers = new Supplier[]
            {
@@ -122,8 +120,42 @@ namespace IMobile.Data
             }
             context.SaveChanges();
 
+    
+            var branch = new Branches[]
+            {
+                new Branches{ID=1, Name="PT", Address ="2 Ha'Sivim St. Petah Tikva", Latitude =32.092084, Longitude =34.856792 },
+                new Branches{ID= 2, Name="RL" , Address ="Lishanski 20 Rishon LeZion" ,Latitude = 31.993148 ,Longitude =34.767842 },
+                new Branches{ID= 3, Name="TV" , Address ="10 Hamasger St. Tel Aviv" ,Latitude = 32.061255 ,Longitude =34.784854 },
+                new Branches{ID= 4, Name="TV" , Address ="Dizengoff 50 Tel Aviv" ,Latitude = 32.075610 ,Longitude =34.775363 },
+                new Branches{ID= 5, Name="JR" , Address ="3 HaParsa St. Jerusalem" ,Latitude = 31.752328 ,Longitude =35.209124 },
+                new Branches{ID= 6, Name="MO" , Address ="Yishpro Center, Modi'in" ,Latitude = 31.879569 ,Longitude =34.962446 },
+                new Branches{ID= 7, Name="HER" , Address ="20 Weizmann St. Herzeliya" ,Latitude = 32.165683 ,Longitude =34.836307 },
+                new Branches{ID= 8, Name="HER" , Address ="82 Ben Gurion St. Herzeliya" ,Latitude = 32.154758 ,Longitude =34.842055 },
+                new Branches{ID= 9, Name="NAT" , Address ="6 HaGavish St. Netanya" ,Latitude = 32.288657 ,Longitude =34.861886 },
+                new Branches{ID= 10, Name="RA" , Address ="15 David Remez St. Netanya" ,Latitude = 32.327509 ,Longitude =34.853963 },
+                new Branches{ID= 11, Name="CS" , Address ="19 HaTaasiya St. Raanana" ,Latitude = 32.196475 ,Longitude =34.877981 },
+                new Branches{ID= 1, Name="HA" , Address ="2 Hayotsrim St. Kfar Saba" ,Latitude = 32.173936 ,Longitude =34.927430 },
+                new Branches{ID= 12, Name="HE" , Address ="HaHaroshet St. Hutzot HaMifratz Mall" ,Latitude = 32.807009 ,Longitude =35.056381 },
+                new Branches{ID= 13, Name="HA" , Address ="2 Harav Ovadia Yosef Ave. (HaHerut) Hadera" ,Latitude = 32.442048 ,Longitude =34.911972 },
+                new Branches{ID= 14 ,Name="CA" , Address ="104 Haazmaot St. Haifa" ,Latitude = 32.820051 ,Longitude =34.998471 },
+                new Branches{ID= 15, Name="NG" , Address ="9 Maale Kamoon St. My Center, Carmiel" ,Latitude = 32.919620 ,Longitude =35.339792 },
+                new Branches{ID= 16, Name="AF" , Address ="12 (Hayezira St. Nof Hagalil (Nazareth Illit" ,Latitude = 32.715199 ,Longitude =35.336007 },
+                new Branches{ID= 17, Name="EI" , Address ="5 Kehila Tsiyon St. Afula" ,Latitude = 32.598943 ,Longitude =35.307022 },
+                new Branches{ID= 18, Name="EI" , Address ="3 Sderot HaTmarim, Eilat" ,Latitude = 29.554805 ,Longitude =34.953855 },
+                new Branches{ID= 19, Name="AS" , Address ="Pninat Eilat Center, Northern Beach promenade" ,Latitude = 29.551073 ,Longitude =34.955617 },
+                new Branches{ID= 20, Name="BS" , Address ="1 Herzel St. ( Unitrade house) Ashdod" ,Latitude = 31.793863 ,Longitude =34.640803 },
+                new Branches{ID= 21, Name="KG" , Address ="125 Toviyaho david Ave. Grand Mall, Beer Sheva" ,Latitude = 31.793863 ,Longitude =34.640803 },
+                new Branches{ID= 22, Name="RH" , Address ="3 Kikar Paz Lev HaIr Mall, Kiryat Gat" ,Latitude = 31.608855 ,Longitude =34.773076 },
+                new Branches{ID= 22, Name="RH" , Address ="34 Derech Yavne St. Rehovot" ,Latitude = 31.904788 ,Longitude =34.808276 },
 
-            
+
+            };
+            foreach (Branches s in branch)
+            {
+                context.Branches.Add(s);
+            }
+            context.SaveChanges();
+
         }
     }
 }
