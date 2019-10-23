@@ -1,35 +1,66 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Devices Page";
 }
+
 
 <!DOCTYPE html>
 <html>
 <head>
-
     <meta charset="utf-8" />
-    <title>Slide Down Page</title>
-    <link rel="stylesheet" href="~/js/site.js" />
+    <title>IMobile Store HomePage</title>
     <link rel="stylesheet" href="~/css/DeviceIndex.css" />
+    <link rel="stylesheet" href="~/css/NavBar.css" />
+    <link rel="stylesheet" href="~/js/site.js" />
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $(".panel").slideToggle("slow");
+            });
+
+        });
+    </script>
 
 </head>
-
 <body>
+    
+    <div id="flip">
+        >>> Click to ALL Devices <<<
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <button class="trigger">
-        Bring it
-    </button>
-    <div class="slider close">
-
-        <br />
-        <br /><br />
-        <h3>ALL DEVICES </h3>
-        <img src="~/images/TakeCloserLook.jpeg" class="img-fluid hero-img" alt="Iphone 11" style="width:100% ; position:absolute">
-        <h1 style="color:#ffffff">IPHONE11</h1>
     </div>
+    <div class="panel">
+        <img src="~/images/TakeCloserLook.jpeg" alt="Iphone11" class="img-responsive" />
+        <p>
+            <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+            <div class="iphone">
+                <h1>
+                    IPHONE 11.
+                    <span class="txt-rotate"
+                          data-period="2000"
+                          data-rotate='[ "4K video.", "Shoot it.", "Flip it.", "Zoom it.", "Light it.", "Tweak it.", "LOVE IT." ]'></span>
+                </h1>
+            </div>
+            <h2>Is All You Need.</h2>
+
+            <h2>Pro cameras. Pro display. Pro performance</h2>
+            <h4>From $24.95/mo . or $599 with trade in</h4>
+            <a class="btn btn-md-default" asp-controller="Devices" asp-action="Details/5" style="color:#6192f7">
+                <h3>Learn more ></h3>
+            </a>
+        </p>
+    </div>
+
+
+    <div class="one">
+
+        <img src="~/images/Galaxy s10.jpeg" alt="" />
+
+        <h2>A Movie in the Park:<br />Kung Fu Panda</h2>
+
+    </div>
+
 
 </body>
 </html>

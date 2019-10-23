@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Details";
 }
+<link rel="stylesheet" href="~/css/NavBar.css" />
+
 
 <h2>Details</h2>
 
@@ -73,8 +75,8 @@
     </dl>
 </div>
 <div>
-    
-    
+
+
     <br>
     <!-- Web Api for Facebook Share page with dynamic URL -->
 
@@ -88,14 +90,14 @@
         </script>
     </head>
     <body onload="myFunction()">
-    <iframe id="Imobile" src="" width="83" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        <iframe id="Imobile" src="" width="83" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
     </body>
-    </html>
+</html>
 
-    <!--End Api Facebook share-->
+<!--End Api Facebook share-->
 
-    <br><br>
+<br><br>
 
-    <a asp-action="Edit" asp-route-id="@Model.DeviceID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<a asp-action="Edit" asp-route-id="@Model.DeviceID">Edit</a> |
+<a asp-action="Index">Back to List</a>
 </div>
