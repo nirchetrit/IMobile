@@ -90,22 +90,22 @@
         console.log(window.location.href)
         $('.navbar-nav li a').each(function (i, obj) {
             if (obj.textContent === window.location.href.split('/')[4]) {
-                $(obj).css('color', 'red');
+                $(obj).css('color', 'blue');
                 $('.menu_products').css('color', '#fff');
             }
             if (!window.location.href.split('/')[4]) {
                 if (window.location.href.split('/')[3] === 'Devices' || window.location.href.split('/')[3] === 'Accessories') {
                     if (window.location.href.split('/')[3] === 'Devices') {
-                        $('.menu_devices').css('color', 'red');
-                        $('.menu_products').css('color', 'red');
+                        $('.menu_devices').css('color', 'blue');
+                        $('.menu_products').css('color', 'blue');
                     }
                     else {
-                        $('.menu_accessories').css('color', 'red');
-                        $('.menu_products').css('color', 'red');
+                        $('.menu_accessories').css('color', 'blue');
+                        $('.menu_products').css('color', 'blue');
                     }
                 }
                 else {
-                    $('.menu_home').css('color', 'red');
+                    $('.menu_home').css('color', 'blue');
 
                 }
             }
