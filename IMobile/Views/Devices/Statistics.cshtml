@@ -45,21 +45,37 @@
     <div id="graphic"></div>
 
     <script>
-        
-        var data = [];
-        var temp=[];
 
-        
+      var data = [];
+      var newObj = {
+          name: "temp",
+          value: 4
+
+        };
+
+
+
 
     @foreach (var d in Model)
     {
-        @:temp.push("name": "@d.Name");
-        @:temp.push("value": @d.ViewCounter);
-        @:data.push(temp);
+
+
+        @:var name1 = "@d.Name";
+        @:var viewcount = @d.ViewCounter;
+         @: var obj = {}
+         @: obj.name = name1
+         @:obj.value = viewcount
+
+         @:data.push(obj);
+
+  
+
     }
 
 
-       
+        console.log('data', data)
+
+
         //sort bars based on value
         data = data.sort(function (a, b) {
             return d3.ascending(a.value, b.value);
